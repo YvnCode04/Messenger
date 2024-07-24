@@ -72,8 +72,14 @@ class LoginViewController: UIViewController {
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapRegister))
-        // Add subviews
+        loginButton.addTarget(self,
+                              action: #selector(loginButtonTapper),
+                              for: .touchUpInside)
         
+        emailField.delegate = self
+        passwordField.delegate = self
+        
+        // Add subviews
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(emailField)
@@ -104,9 +110,55 @@ class LoginViewController: UIViewController {
                                  height: 52)
     }
     
-    @objc private func didTapRegister(){    
+    @objc private func loginButtonTapper() {
+        
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        guard let email = emailField.text, let password = passwordField.text,
+              !email.isEmpty, !password.isEmpty,password.count >= 6 else {
+            alertUserLoginErrort()
+            return
+        }
+        // Firebase login
+    }
+    func alertUserLoginErrort() {
+        let alert = UIAlertController(title: "Woops !",
+                                      message: "Please enter all information to login",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Dismiss",
+                                      style: .cancel,
+                                      handler: nil))
+        present(alert, animated: true)
+    }
+    @objc private func loginButtonTapped(){
+        
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        guard let email = emailField.text, let password = passwordField.text,
+              !email.isEmpty, !password.isEmpty else {
+            return
+        }
+    }
+    
+    @objc private func didTapRegister(){
         let vc = RegisterViewController()
-        vc.title = "Create Account"
+        vc.title = "Create Account" 
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+extension LoginViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == emailField{
+            passwordField.becomeFirstResponder()
+    }
+        else if textField == passwordField{
+            loginButtonTapper()
+        }
+       
+        return true
     }
 }
