@@ -127,7 +127,7 @@ class RegisterViewController: UIViewController {
     }
  
     @objc private func didTapChangeProfilePic(){
-        presentPhotoActionSheet()
+       print("Called for a change")
         
     }
     override func viewDidLayoutSubviews() {
@@ -244,9 +244,10 @@ extension RegisterViewController: UILargeContentViewerInteractionDelegate, UINav
     }
      
     func presentCamera () {
-        
+       
     }
     func presentPhotoPicker() {
+      
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController]){
