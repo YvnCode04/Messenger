@@ -4,7 +4,6 @@
 //
 //  Created by Yvan Gauthier on 16/09/2024.
 //
-
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold )
         return button
-            
+        
         
     }()
     
@@ -100,27 +99,27 @@ class LoginViewController: UIViewController {
         emailField.frame = CGRect(x: 30,
                                   y: imageView.bottom+10,
                                   width: scrollView.width-60,
-                                 height: 52)
-      passwordField.frame = CGRect(x: 30,
-                                   y: emailField.bottom+10,
-                                  width: scrollView.width-60,
-                                 height: 52)
+                                  height: 52)
+        passwordField.frame = CGRect(x: 30,
+                                     y: emailField.bottom+10,
+                                     width: scrollView.width-60,
+                                     height: 52)
         loginButton.frame = CGRect(x: 30,
                                    y: passwordField.bottom+10,
-                                    width: scrollView.width-60,
+                                   width: scrollView.width-60,
                                    height: 52)
     }
     @objc private func loginButtonTapped() {
         
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
-          
+        
         guard let email = emailField.text, let password = passwordField.text,
               !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             alertUserLoginError()
             return
         }
-       // Firebase Login
+        // Firebase Login
         
     }
     
@@ -151,6 +150,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-
+    
     
 }
