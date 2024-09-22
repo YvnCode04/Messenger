@@ -5,6 +5,7 @@
 //  Created by Yvan Gauthier on 16/09/2024.
 //
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -110,7 +111,6 @@ class LoginViewController: UIViewController {
                                    height: 52)
     }
     @objc private func loginButtonTapped() {
-        
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
@@ -119,8 +119,21 @@ class LoginViewController: UIViewController {
             alertUserLoginError()
             return
         }
-        // Firebase Login
         
+        // Firebase Login
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult, error in
+            guard let strongSelf = self else {
+                return
+            }
+          
+            guard let resault = authResult, error == nil else {
+                print("Failed to log in user with email: \(email)")
+                return
+            }
+            let  user = resault.user
+            print("Logged in user: \(user)")
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+        })
     }
     
     func alertUserLoginError() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1A804EE598CD0A16F726372 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F6BED479113B8F32117CA0 /* Pods_Messenger.framework */; };
+		DE23872E2CA021C900EA04D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE23872D2CA021C900EA04D3 /* GoogleService-Info.plist */; };
 		DE2D12AF2C9A12D800DB3D79 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D12AE2C9A12D800DB3D79 /* Extensions.swift */; };
 		DEB807D22C9852290073DE3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB807D12C9852290073DE3D /* AppDelegate.swift */; };
 		DEB807D42C9852290073DE3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB807D32C9852290073DE3D /* SceneDelegate.swift */; };
@@ -15,6 +16,7 @@
 		DEB807D92C9852290073DE3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DEB807D82C9852290073DE3D /* Base */; };
 		DEB807DB2C98522A0073DE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB807DA2C98522A0073DE3D /* Assets.xcassets */; };
 		DEB807DE2C98522A0073DE3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DEB807DD2C98522A0073DE3D /* Base */; };
+		DECEE0552CA0AA9500B434D0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEE0542CA0AA9500B434D0 /* DatabaseManager.swift */; };
 		DED9F64C2C98BB3E0085E6AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9F64B2C98BB3E0085E6AD /* LoginViewController.swift */; };
 		DED9F64E2C98BB4C0085E6AD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9F64D2C98BB4C0085E6AD /* RegisterViewController.swift */; };
 		DED9F6502C98BB800085E6AD /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9F64F2C98BB800085E6AD /* PhotoViewerViewController.swift */; };
@@ -27,6 +29,7 @@
 		16F6BED479113B8F32117CA0 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDE62DD6FE4D021919A361F /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		BA0B6EE0FBA54B395C22D1EB /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		DE23872D2CA021C900EA04D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE2D12AE2C9A12D800DB3D79 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DEB807CE2C9852290073DE3D /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB807D12C9852290073DE3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		DEB807DA2C98522A0073DE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB807DD2C98522A0073DE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEB807DF2C98522A0073DE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DECEE0542CA0AA9500B434D0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		DED9F64B2C98BB3E0085E6AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DED9F64D2C98BB4C0085E6AD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DED9F64F2C98BB800085E6AD /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +66,6 @@
 				4DDE62DD6FE4D021919A361F /* Pods-Messenger.debug.xcconfig */,
 				BA0B6EE0FBA54B395C22D1EB /* Pods-Messenger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +90,7 @@
 		DEB807D02C9852290073DE3D /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				DE23872D2CA021C900EA04D3 /* GoogleService-Info.plist */,
 				DED9F6492C98B9D40085E6AD /* Resources */,
 				DED9F6482C98B9BD0085E6AD /* ViewModels */,
 				DED9F6472C98B9A90085E6AD /* Models */,
@@ -139,6 +143,7 @@
 				DEB807D12C9852290073DE3D /* AppDelegate.swift */,
 				DEB807D32C9852290073DE3D /* SceneDelegate.swift */,
 				DE2D12AE2C9A12D800DB3D79 /* Extensions.swift */,
+				DECEE0542CA0AA9500B434D0 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB807DB2C98522A0073DE3D /* Assets.xcassets in Resources */,
+				DE23872E2CA021C900EA04D3 /* GoogleService-Info.plist in Resources */,
 				DEB807DE2C98522A0073DE3D /* Base in Resources */,
 				DEB807D92C9852290073DE3D /* Base in Resources */,
 			);
@@ -285,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED9F64C2C98BB3E0085E6AD /* LoginViewController.swift in Sources */,
+				DECEE0552CA0AA9500B434D0 /* DatabaseManager.swift in Sources */,
 				DED9F64E2C98BB4C0085E6AD /* RegisterViewController.swift in Sources */,
 				DED9F6542C98BBA60085E6AD /* NewConversationViewController.swift in Sources */,
 				DEB807D62C9852290073DE3D /* ConversationsViewController.swift in Sources */,
@@ -356,7 +363,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -419,7 +426,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
