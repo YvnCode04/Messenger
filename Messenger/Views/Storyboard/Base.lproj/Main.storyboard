@@ -101,6 +101,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="ZaC-Ug-xUy"/>
+                    <connections>
+                        <outlet property="tableView" destination="yZf-57-Ufv" id="exY-1i-Ftx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vg-f6-xXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

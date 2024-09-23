@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: "cell" )
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -39,9 +41,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         do {
            try FirebaseAuth.Auth.auth().signOut()
             
+            let vc = LoginViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: false)
+            
         }
         catch{
-            
+            print("Failed to sign out")
         }
         
     }
